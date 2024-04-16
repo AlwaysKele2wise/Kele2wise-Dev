@@ -1,5 +1,9 @@
 
-/*const express = require('express');
+
+
+
+
+const express = require('express');
 require("dotenv").config();
 
 const app = express();
@@ -9,7 +13,26 @@ const port = process.env.PORT
  
 
 app.get("/student", ( req, res, next) => {
-    const studentDetails ={
+});
+app.post("/register", ( req, res, next) => {
+ // const email = req.body.email
+ // const password = req.body.password
+ 
+
+ const {email, password} = req.body;
+
+ console.log(body);
+
+ res.send({
+    responsebody: req.body,
+    msg: "user successfully registered"
+ });
+
+});
+
+
+
+    /*const studentDetails ={
         name: "Emmanuel",
         age: 30,
         class: 1802,
@@ -17,11 +40,11 @@ app.get("/student", ( req, res, next) => {
     }
 
     res.send(studentDetails)
-})
+})*/
 
 app.listen(port, () =>{
     console.log("server is listening on port:" + port)
-})*/
+})
 
 
 /*function myFunction(b1, b2) {
@@ -41,7 +64,7 @@ function myFunction(p1, p2){
 } 
 
 console.log(myFunction(10, 5))
-myFunction(10, 5)*/
+myFunction(10, 5)
 
 function toCelsius(f) {
     return (f - 32) * 5 / 9
@@ -52,7 +75,7 @@ function toFahrenheit(c) {
 }
 
 console.log(toCelsius(77))
-console.log(toFahrenheit(100))
+console.log(toFahrenheit(100))*/
 
 // Function to compute the product of q1 and q2
 /*function myFunction() {
