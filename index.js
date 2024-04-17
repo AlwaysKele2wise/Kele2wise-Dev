@@ -10,6 +10,8 @@ const port = process.env.PORT
  
 app.use(express.urlencoded({extended: true}))
 app.use(express.json({}))
+
+
 app.get("/student/age", ( req, res, next) => {
 const studentDetails ={
         name: "Emmanuel ukpai",
@@ -59,17 +61,17 @@ const user_details = {
    });
 });
  
-app.patch("/partial", ( req, res, next) => {
+app.patch("/update", ( req, res, next) => {
   
    const {password, full_name} = req.body;
    
-      const user_partial = {
+      const user_details = {
         password: "9056168415",
         full_name: "kele2wise ukpai aka De Boss"
     }
      
            res.send({
-            user_partial,
+            user_details,
             msg: "saved successful",
        });
 });
