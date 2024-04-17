@@ -11,12 +11,54 @@ const port = process.env.PORT
 app.use(express.urlencoded({extended: true}))
 app.use(express.json({}))
 app.get("/student/age", ( req, res, next) => {
-    
-})
-app.post("/register", ( req, res, next) => {
-});
 
-app.put("/update", ( req, res, next) => {
+})
+
+app.post("/register", ( req, res, next) => {
+  
+   const { firstName, email, password, } = req.body;
+
+   const body = {
+    firstName, 
+    email, 
+    password,
+   };
+
+   //console.log(body);
+
+   res.send({
+    body,
+   msg:"user successfully registered"
+  });
+
+}); 
+
+/* const studentDetails ={
+        name: "Emmanuel ukpai",
+        age: 30,
+        clas: 1802,
+        address: "Ojo Lagos igboelerin"
+    }
+    
+    res.send(studentDetails)
+});*/
+
+
+app.listen(port, () =>{
+    console.log("server is listening on port:" + port)  
+ })
+
+
+
+
+
+
+
+
+
+
+
+/*app.put("/update", ( req, res, next) => {
 
   //const { age, address } = req.body;
   // const full_name = req.body.full_name
@@ -37,43 +79,15 @@ app.put("/update", ( req, res, next) => {
    });
 });
 
-  app.listen(port, () =>{
-        console.log("server is listening on port:" + port)  
-     })
-    
+  
      
 
  // const email = req.body.email
  // const password = req.body.password
  // const first_name = req.body.first_name
 
- /*const { firstName, email, password, } = req.body;
-
-   const body = {
-    firstName, 
-    email, 
-    password,
-   };
-
-   //console.log(body);
-
-   res.send({
-    body,
-   msg:"user successfully registered"
-  });*/
-
-
-
-/*const studentDetails ={
-    name: "Emmanuel ukpai",
-    age: 30,
-    clas: 1802,
-    address: "Ojo Lagos igboelerin"
-}
-
-res.send(studentDetails)*/
-
  
+
 
 
 
