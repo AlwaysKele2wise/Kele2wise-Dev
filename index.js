@@ -8,42 +8,46 @@ const app = express();
 const port = process.env.PORT
 //console.log(process.env.kelechi_secret_key)
  
-
+app.use(express.urlencoded({extended: true}))
+app.use(express.json({}))
 app.get("/student/age", ( req, res, next) => {
     
+})
+app.post("/register", ( req, res, next) => {
+ // const email = req.body.email
+ // const password = req.body.password
+ // const first_name = req.body.first_name
 
-const studentDetails ={
+ const { firstName, email, password, } = req.body;
+
+   const body = {
+    firstName, 
+    email, 
+    password,
+   };
+
+   //console.log(body);
+
+   res.send({
+    body,
+   msg:"user successfully registered"
+  });
+
+});
+
+app.listen(port, () =>{
+    console.log("server is listening on port:" + port)  
+ })
+
+
+/*const studentDetails ={
     name: "Emmanuel ukpai",
     age: 30,
     clas: 1802,
     address: "Ojo Lagos igboelerin"
 }
 
-res.send(studentDetails)
-})
-
-app.listen(port, () =>{
-    console.log("server is listening on port:" + port)
-    
- })
-
-/*app.post("/register", ( req, res, next) => {
- // const email = req.body.email
- // const password = req.body.password
- 
- const {email, password} = req.body;
-
- console.log(body);
-
- res.send({
-    responsebody: req.body,
-    msg: "user successfully registered"
- });
-
-});*/
-
-
-
+res.send(studentDetails)*/
 
  
 
