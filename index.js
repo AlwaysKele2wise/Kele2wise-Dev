@@ -39,6 +39,7 @@ app.post("/register", ( req, res, next) => {
   });
 
 });
+
 app.put("/update", ( req, res, next) => {
   
     
@@ -58,17 +59,36 @@ const user_details = {
    });
 });
  
+app.patch("/partial", ( req, res, next) => {
+  
+   const {password, full_name} = req.body;
+   
+      const user_partial = {
+        password: "9056168415",
+        full_name: "kele2wise ukpai aka De Boss"
+    }
+     
+           res.send({
+            user_partial,
+            msg: "saved successful",
+       });
+});
 
 app.listen(port, () =>{
     console.log("server is listening on port:" + port)  
- })
+});
 
 
 
 
   
      
-
+ //const user_details = {
+    //        email:"kele2wise@gmail.com",
+    //        password: "234857463893",
+    //        full_name: full_name,
+   //         age: age,
+    //        address: address
  
 
 
