@@ -14,11 +14,40 @@ app.get("/student/age", ( req, res, next) => {
     
 })
 app.post("/register", ( req, res, next) => {
+});
+
+app.put("/update", ( req, res, next) => {
+
+  //const { age, address } = req.body;
+  // const full_name = req.body.full_name
+  // const age = req.body.age
+  // const address = req.body.address
+   
+    const user_details = {
+     email:"kele2wise@gmail.com",
+     password: "234857463893",
+     full_name: full_name,
+     age: age,
+     address: address
+    }
+
+    res.send({
+        user_details,
+        msg: "update successful"
+   });
+});
+
+  app.listen(port, () =>{
+        console.log("server is listening on port:" + port)  
+     })
+    
+     
+
  // const email = req.body.email
  // const password = req.body.password
  // const first_name = req.body.first_name
 
- const { firstName, email, password, } = req.body;
+ /*const { firstName, email, password, } = req.body;
 
    const body = {
     firstName, 
@@ -31,13 +60,8 @@ app.post("/register", ( req, res, next) => {
    res.send({
     body,
    msg:"user successfully registered"
-  });
+  });*/
 
-});
-
-app.listen(port, () =>{
-    console.log("server is listening on port:" + port)  
- })
 
 
 /*const studentDetails ={
@@ -50,7 +74,6 @@ app.listen(port, () =>{
 res.send(studentDetails)*/
 
  
-
 
 
 
