@@ -78,7 +78,6 @@ res.send(studentDetails)*/
 
 
 
-
 /*function myFunction(b1, b2) {
     console.log(b1 + b2)
 }
