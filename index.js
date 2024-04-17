@@ -1,8 +1,5 @@
 
 
-
-
-
 const express = require('express');
 require("dotenv").config();
 
@@ -12,13 +9,28 @@ const port = process.env.PORT
 //console.log(process.env.kelechi_secret_key)
  
 
-app.get("/student", ( req, res, next) => {
-});
-app.post("/register", ( req, res, next) => {
+app.get("/student/age", ( req, res, next) => {
+    
+
+const studentDetails ={
+    name: "Emmanuel ukpai",
+    age: 30,
+    clas: 1802,
+    address: "Ojo Lagos igboelerin"
+}
+
+res.send(studentDetails)
+})
+
+app.listen(port, () =>{
+    console.log("server is listening on port:" + port)
+    
+ })
+
+/*app.post("/register", ( req, res, next) => {
  // const email = req.body.email
  // const password = req.body.password
  
-
  const {email, password} = req.body;
 
  console.log(body);
@@ -28,23 +40,15 @@ app.post("/register", ( req, res, next) => {
     msg: "user successfully registered"
  });
 
-});
+});*/
 
 
 
-    /*const studentDetails ={
-        name: "Emmanuel",
-        age: 30,
-        class: 1802,
-        address: "Ojo Lagos igboelerin"
-    }
 
-    res.send(studentDetails)
-})*/
+ 
 
-app.listen(port, () =>{
-    console.log("server is listening on port:" + port)
-})
+
+
 
 
 /*function myFunction(b1, b2) {
