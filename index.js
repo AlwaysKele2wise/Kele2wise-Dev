@@ -11,17 +11,24 @@ const port = process.env.PORT
 app.use(express.urlencoded({extended: true}))
 app.use(express.json({}))
 app.get("/student/age", ( req, res, next) => {
-
-})
+const studentDetails ={
+        name: "Emmanuel ukpai",
+        age: 30,
+        clas: 1802,
+        address: "Ojo Lagos igboelerin"
+    }
+    
+    res.send(studentDetails)
+});
 
 app.post("/register", ( req, res, next) => {
   
-   const { firstName, email, password, } = req.body;
+   const { email, password, full_name } = req.body;
 
    const body = {
-    firstName, 
     email, 
     password,
+    full_name 
    };
 
    //console.log(body);
@@ -31,18 +38,26 @@ app.post("/register", ( req, res, next) => {
    msg:"user successfully registered"
   });
 
-}); 
-
-/* const studentDetails ={
-        name: "Emmanuel ukpai",
-        age: 30,
-        clas: 1802,
-        address: "Ojo Lagos igboelerin"
-    }
+});
+app.put("/update", ( req, res, next) => {
+  
     
-    res.send(studentDetails)
-});*/
+const {full_name, age, address } = req.body;
 
+const user_details = {
+        email:"kele2wise@gmail.com",
+        password: "234857463893",
+        full_name: full_name,
+        age: age,
+        address: address
+       }
+ 
+       res.send({
+        user_details,
+        msg: "update successful",
+   });
+});
+ 
 
 app.listen(port, () =>{
     console.log("server is listening on port:" + port)  
@@ -51,40 +66,8 @@ app.listen(port, () =>{
 
 
 
-
-
-
-
-
-
-
-/*app.put("/update", ( req, res, next) => {
-
-  //const { age, address } = req.body;
-  // const full_name = req.body.full_name
-  // const age = req.body.age
-  // const address = req.body.address
-   
-    const user_details = {
-     email:"kele2wise@gmail.com",
-     password: "234857463893",
-     full_name: full_name,
-     age: age,
-     address: address
-    }
-
-    res.send({
-        user_details,
-        msg: "update successful"
-   });
-});
-
   
      
-
- // const email = req.body.email
- // const password = req.body.password
- // const first_name = req.body.first_name
 
  
 
