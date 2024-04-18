@@ -76,6 +76,25 @@ app.patch("/update", ( req, res, next) => {
        });
 });
 
+app.delete("/delete", ( req, res, next) => {
+  
+    const user = { email, password, full_name, age } = req.body;
+ 
+    const user_details = {
+     email, 
+     password,
+     full_name,
+     age 
+    };
+ 
+    //console.log(body);
+ 
+    res.send({
+     user_details,
+    msg:"Delete succesfully"
+   });
+ 
+ });
 app.listen(port, () =>{
     console.log("server is listening on port:" + port)  
 });
