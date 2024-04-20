@@ -1,7 +1,15 @@
 
 
-const express = require('express');
+const express = require("express");
 require("dotenv").config();
+
+
+const luka = require("./luka")
+
+console.log({name: luka.age})
+
+// const config = require("dotenv")
+// config.config()
 
 const app = express();
 
@@ -10,6 +18,9 @@ const port = process.env.PORT
  
 app.use(express.urlencoded({extended: true}))
 app.use(express.json({}))
+
+
+
 
 
 app.get("/student/age", ( req, res, next) => {
@@ -146,6 +157,11 @@ function toFahrenheit(c) {
 console.log(toCelsius(77))
 console.log(toFahrenheit(100))*/
 
+
+
+
+
+
 // Function to compute the product of q1 and q2
 /*function myFunction() {
    const result = 15 * 10
@@ -170,10 +186,26 @@ dev(7, 3)*/
 
 // dev()
 
-
 /*const dev = (par1,par2) => {
 console.log({sum:par1+par2})
 console.log("Kelechi ukpai")
 }
 
 dev(2, 3)*/
+
+
+
+
+
+// ecommerce
+//1. Users( all the users)
+//2. Products( all the products)
+//3. payment()
+//4. sellers
+
+// app.get("/student/age", req, res, next) => {
+    // const studentDetails ={
+    //     }
+    //     
+    //     res.send(studentDetails);
+// });
