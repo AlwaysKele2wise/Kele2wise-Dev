@@ -1,4 +1,4 @@
-const { Router } = require("express")
+const express = require("express")
 
 //const express = require
 const router = express.Router()
@@ -20,9 +20,7 @@ router.get("/", ( req, res, next) => {
             image: "htttots/image",
             address:"no 1, makanjuola street"
         }
-    }
-
-    )
+    })
 });
 
-    module.experts = router
+module.experts = router
