@@ -1,15 +1,25 @@
 
 
-const express = require('express');
+const express = require("express");
 require("dotenv").config();
 
-const app = express();
 
+
+// const config = require("dotenv")
+// config.config()
+
+const app = express();
 const port = process.env.PORT
+
 //console.log(process.env.kelechi_secret_key)
  
 app.use(express.urlencoded({extended: true}))
 app.use(express.json({}))
+
+
+
+
+
 app.get("/student/age", ( req, res, next) => {
 const studentDetails ={
         name: "Emmanuel ukpai",
@@ -59,21 +69,40 @@ const user_details = {
    });
 });
  
-app.patch("/partial", ( req, res, next) => {
+app.patch("/update", ( req, res, next) => {
   
    const {password, full_name} = req.body;
    
-      const user_partial = {
+      const user_details = {
         password: "9056168415",
         full_name: "kele2wise ukpai aka De Boss"
     }
      
            res.send({
-            user_partial,
+            user_details,
             msg: "saved successful",
        });
 });
 
+app.delete("/delete", ( req, res, next) => {
+  
+    const user = { email, password, full_name, age } = req.body;
+ 
+    const user_details = {
+     email, 
+     password,
+     full_name,
+     age 
+    };
+ 
+    //console.log(body);
+ 
+    res.send({
+     user_details,
+    msg:"Delete succesfully"
+   });
+ 
+ });
 app.listen(port, () =>{
     console.log("server is listening on port:" + port)  
 });
@@ -125,6 +154,11 @@ function toFahrenheit(c) {
 console.log(toCelsius(77))
 console.log(toFahrenheit(100))*/
 
+
+
+
+
+
 // Function to compute the product of q1 and q2
 /*function myFunction() {
    const result = 15 * 10
@@ -149,10 +183,26 @@ dev(7, 3)*/
 
 // dev()
 
-
 /*const dev = (par1,par2) => {
 console.log({sum:par1+par2})
 console.log("Kelechi ukpai")
 }
 
 dev(2, 3)*/
+
+
+
+
+
+// ecommerce
+//1. Users( all the users)
+//2. Products( all the products)
+//3. payment()
+//4. sellers
+
+// app.get("/student/age", req, res, next) => {
+    // const studentDetails ={
+    //     }
+    //     
+    //     res.send(studentDetails);
+// });
