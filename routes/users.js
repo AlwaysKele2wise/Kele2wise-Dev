@@ -1,11 +1,18 @@
-const express = require
+const { Router } = require("express")
 
-//commerce
+//const express = require
+const router = express.Router()
 
 
-app.post("/register", ( req, res, next) => {
+router.get("/login", ( req, res, next) => {
   
      
-           res.send("welcome")
-    })
+           res.send("welcome kelechi")
+ });
+router.get("/", ( req, res, next) => {
+  
+     
+       res.send("welcome Kc")
+});
 
+    module.experts = router

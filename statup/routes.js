@@ -1,7 +1,9 @@
-const userRoute = ("../routes/users")
+const userRoute = require("../routes/users")
+const productRoute = require("../routes/product")
 
-require("../")
 module.exports = (app) => {
 
     app.use("/users", usersRoute)
+    app.use("/products", productRoute)
+    
 }
