@@ -1,18 +1,17 @@
-const { Router } = require("express")
+const express = require("express")
 
-//const express = require
+
 const router = express.Router()
 
 
 router.post("/", ( req, res, next) => {
   
      
-           res.send("welcome")
+           res.send("product created successfully")
 });
 
 router.get("/", ( req, res, next) => {
-  
-     
+    
     res.send({
         product:{
             name_of_product:"IPAD",
@@ -20,9 +19,7 @@ router.get("/", ( req, res, next) => {
             image: "htttots/image",
             address:"no 1, makanjuola street"
         }
-    }
-
-    )
+    })
 });
 
-    module.experts = router
+module.experts = router

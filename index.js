@@ -1,24 +1,20 @@
 
-
 const express = require("express");
 require("dotenv").config();
 
 
-
-// const config = require("dotenv")
-// config.config()
 
 const app = express();
 const port = process.env.PORT
 
 //console.log(process.env.kelechi_secret_key)
  
-app.use(express.urlencoded({extended: true}))
-app.use(express.json({}))
+app.use(express.urlencoded({extended: true}));
+app.use(express.json({}));
 
 
 
-
+//require("./statup/routes")(app)
 
 app.get("/student/age", ( req, res, next) => {
 const studentDetails ={
