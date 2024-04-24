@@ -8,7 +8,8 @@ router.post("/", ( req, res, next) => {
   
      
            res.send("product created successfully")
-});
+           status: true
+ });
 
 router.get("/", ( req, res, next) => {
     
@@ -22,4 +23,8 @@ router.get("/", ( req, res, next) => {
     })
 });
 
+router.get("/", ( req, res, next) => {
+
+    res.send("users dashboard")
+});
 module.experts = router
