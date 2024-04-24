@@ -4,11 +4,11 @@ const express = require("express")
 const router = express.Router()
 
 
-router.post("/", ( req, res, next) => {
+router.post("/", (req, res, next) => {
            res.send("product created successfully")
  });
 
-router.get("/", ( req, res, next) => {
+router.get("/", (req, res, next) => {
     res.send({
         product:{
             name_of_product: "IPAD",
