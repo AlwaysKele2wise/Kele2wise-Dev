@@ -19,4 +19,4 @@ router.get("/", (req, res, next) => {
     })
 });
 
-module.experts = router
+module.exports = router

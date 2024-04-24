@@ -1,4 +1,4 @@
-const userRoute = require("../routes/users")
+const usersRoute = require("../routes/users")
 const productRoute = require("../routes/product")
 
 module.exports = (app) =>{

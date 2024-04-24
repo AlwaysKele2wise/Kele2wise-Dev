@@ -11,9 +11,7 @@ const port = process.env.PORT
 app.use(express.urlencoded({extended: true}));
 app.use(express.json({}));
 
-
-
-//require("./statup/routes")(app)
+require("./statup/routes")(app)
 
 app.get("/student/age", ( req, res, next) => {
 const studentDetails ={
