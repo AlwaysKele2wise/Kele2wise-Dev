@@ -4,7 +4,6 @@ require("dotenv").config();
 
 
 const app = express();
-
 const port = process.env.PORT;
 
 //console.log(process.env.kelechi_secret_key)
@@ -14,6 +13,16 @@ app.use(express.json({}));
 
 
 require("./statup/routes")(app)
+
+const db = "mongodb+srv://kele2wise:Claritta@2@kele2wise.7wz0chl.mongodb.net/"
+
+mongoose.set('strictQuery', false);
+
+mongoose
+  .connect(db)
+  .then(() => console.log("kele2wiseDevDB connected successfully......"));
+
+
 
 app.get("/student/age", ( req, res, next) => {
 const studentDetails ={
