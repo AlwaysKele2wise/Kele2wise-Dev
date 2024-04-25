@@ -1,7 +1,7 @@
-
 const express = require("express");
 require("dotenv").config();
 
+const mongoose = require("mongoose");
 
 const app = express();
 const port = process.env.PORT;
@@ -14,7 +14,8 @@ app.use(express.json({}));
 
 require("./statup/routes")(app)
 
-const db = "mongodb+srv://kele2wise:Claritta@2@kele2wise.7wz0chl.mongodb.net/"
+
+const db = "mongodb+srv://kelechi:emma080nuel@kelechi.ricnkkk.mongodb.net/"
 
 mongoose.set('strictQuery', false);
 
