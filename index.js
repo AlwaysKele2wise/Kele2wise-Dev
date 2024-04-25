@@ -3,13 +3,12 @@ const express = require("express");
 require("dotenv").config();
 
 
-
 const app = express();
 
 const port = process.env.PORT;
 
 //console.log(process.env.kelechi_secret_key)
- 
+
 app.use(express.urlencoded({extended: true}));
 app.use(express.json({}));
 
