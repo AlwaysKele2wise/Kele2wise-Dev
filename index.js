@@ -11,7 +11,6 @@ const port = process.env.PORT;
 app.use(express.urlencoded({extended: true}));
 app.use(express.json({}));
 
-
 require("./statup/routes")(app)
 
 
@@ -21,7 +20,7 @@ mongoose.set('strictQuery', false);
 
 mongoose
   .connect(db)
-  .then(() => console.log("kele2wiseDevDB connected successfully......"));
+  .then(() => console.log("kele2wiseDevDB connected successfully...."));
 
 
 
@@ -112,7 +111,6 @@ app.delete("/delete", ( req, res, next) => {
 app.listen(port, () =>{
     console.log("server is listening on port:" + port)  
 });
-
 
 
 
