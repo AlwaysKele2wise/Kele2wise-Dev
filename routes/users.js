@@ -1,20 +1,37 @@
 const express = require("express")
+const userModel = require("../models/users")
 
 const router = express.Router()
 
 
-router.post("/register", ( req, res, next) => {
-       res.send("account created successfully")
+router.post("/register", async(req, res, next) => {
+       const {email, password} = req.body
+       // const email = req.body.email
+       // const password = req.body.password
+
+       const saveUser = await userModel.create({
+              email: email,
+              password: password
+       
+       })
+       res.status(201).json({
+              msg:"account created successfully",
+              userDetails:saveUser
+       })
 });
 
-router.post("/login", ( req, res, next) => {
+router.post("/login", (req, res, next) => {
+       res.status(200).json("Welcome Kc")
+});
+
+
+router.get("/get", async( req, res, next) => {
   
-     res.send("welcome Kc")
-});
-
-router.get("/", ( req, res, next) => {
-
-       res.send("users dashboard")
+       const userExist = await userModel.find({})
+      
+  res.status(200).json({
+      data:userExist
+       })
 });
 
 module.exports = router 

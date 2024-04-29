@@ -1,10 +1,12 @@
 const express = require("express");
 require("dotenv").config();
-
 const mongoose = require("mongoose");
 
 const app = express();
+
+
 const port = process.env.PORT;
+const db = process.env.db;
 
 //console.log(process.env.kelechi_secret_key)
 
@@ -14,7 +16,7 @@ app.use(express.json({}));
 require("./statup/routes")(app)
 
 
-const db = "mongodb+srv://kelechi:emma080nuel@kelechi.ricnkkk.mongodb.net/"
+//const db = "mongodb+srv://kelechi:75DkiwNpksEKQNWI@kelechi.ricnkkk.mongodb.net/"
 
 mongoose.set('strictQuery', false);
 
