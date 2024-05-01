@@ -9,8 +9,6 @@ router.post("/register", async(req, res, next) => {
        // const email = req.body.email
        // const password = req.body.password
 
-        console.log({email})
-
        const saveUser = await userModel.create({
               email: email,
               password: password
