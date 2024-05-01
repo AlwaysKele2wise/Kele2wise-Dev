@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-
 const port = process.env.PORT;
 const db = process.env.db;
 
@@ -15,9 +14,7 @@ app.use(express.json({}));
 
 require("./statup/routes")(app)
 
-
 //const db = "mongodb+srv://kelechi:75DkiwNpksEKQNWI@kelechi.ricnkkk.mongodb.net/"
-
 
 mongoose.set('strictQuery', false);
 
