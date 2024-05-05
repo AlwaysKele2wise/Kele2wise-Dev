@@ -22,6 +22,10 @@ mongoose
   .connect(db)
   .then(() => console.log("kele2wiseDevDB connected successfully...."));
 
+  app.listen(port, () =>{
+    console.log("server is listening on port:" + port)  
+});
+
 
 
 app.get("/student/age", ( req, res, next) => {
