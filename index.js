@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 
+
 const port = process.env.PORT;
 const db = process.env.db;
 
@@ -22,9 +23,6 @@ mongoose
   .connect(db)
   .then(() => console.log("kele2wiseDevDB connected successfully...."));
 
-  app.listen(port, () =>{
-    console.log("server is listening on port:" + port)  
-});
 
 
 
@@ -104,7 +102,7 @@ app.delete("/delete", ( req, res, next) => {
     };
  
     
-    //console.log(body);
+    // console.log(body);
  
     res.send({
      user_details,
