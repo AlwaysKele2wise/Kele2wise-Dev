@@ -37,7 +37,7 @@ const studentDetails ={
     res.send(studentDetails)
 });
 
-app.post("/register", ( req, res, next) => {
+app.post("/register/lastclass", ( req, res, next) => {
   
    const { email, password, full_name } = req.body;
 
@@ -130,10 +130,20 @@ app.listen(port, () =>{
 
 
 
-/*function myFunction(b1, b2) {
+/*function myFunction(b1, b2)  {
     console.log(b1 + b2)
 }
 myFunction(7, 6)
+*/
+
+
+
+
+const myFunction = (b1, b2) =>  {
+    console.log(b1 + b2)
+}
+
+
 
 /*let x = 5
 let y = 6
