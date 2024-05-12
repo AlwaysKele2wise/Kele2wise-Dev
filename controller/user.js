@@ -1,6 +1,5 @@
 const userModel = require("../models/users")
 
-
 const registerUser =  async(req, res, next) => {
     const {email, password, full_name} = req.body
     // const email = req.body.email
@@ -24,14 +23,19 @@ if(!password){
   }
 //else
 
-    const saveUser = await userModel.create({
-           email: email,
-           password: password
+const salt = await bcrypt.genSaltSync(10)
+
+
+console.log({salt})
+
+    // const saveUser = await userModel.create({
+    //        email: email,
+    //        password: password
     
-    })
+    // })
     res.status(201).json({
            msg:"account created successfully",
-           userDetails:saveUser
+           //userDetails:saveUser
     })
 
 }
