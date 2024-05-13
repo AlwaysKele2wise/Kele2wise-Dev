@@ -9,11 +9,11 @@ const router = express.Router()
 
 router.post("/register", registerUser);
 
-router.post("/login", (req, res, next) => {
-       res.status(200).json("Welcome Kc")
-});
+// router.post("/login", (req, res, next) => {
+//        res.status(200).json("Welcome Kc")
+// });
 
 
-router.get("/get", getUser);
+router.post("/get", getUser);
 router.get("/getone", getAUser);
 module.exports = router 

@@ -116,7 +116,9 @@ app.listen(port, () =>{
 
 
 
-  
+  // 1. CHECK THAT THE USEREXIST  /// email address
+  // 2. TO CHECK IF THE PASSWORD MATCHES
+  // 3. LOG THE USR IN
      
  //const user_details = {
     //        email:"kele2wise@gmail.com",
