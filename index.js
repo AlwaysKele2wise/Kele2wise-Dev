@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const mongoose = require("mongoose");
+const { getUser } = require("./controller/user");
 
 const app = express();
 
@@ -26,15 +27,23 @@ mongoose
 
 
 
-app.get("/student/age", ( req, res, next) => {
-const studentDetails ={
-        name: "Emmanuel ukpai",
-        age: 30,
-        clas: 1802,
-        address: "Ojo Lagos igboelerin"
-    }
-    
-    res.send(studentDetails)
+app.get("/test", ( req, res, next) => {
+
+    const newUser = function(req, res) {
+        this.name =  'Jane Doe',
+        this.age = 28
+      };
+      
+    try{
+        const user = newUser();
+        if(!user){
+            throw new Error("User is not found");
+        }
+      } catch (error) {
+        return next(error);
+      }
+     
+       return res.status(200).json({success: true})
 });
 
 app.post("/register/lastclass", ( req, res, next) => {
@@ -110,6 +119,14 @@ app.delete("/delete", ( req, res, next) => {
    });
  
  });
+
+ const newUser = () => undefined;
+
+ function errorHandler(error) {
+    console.error('An error occurred:', error);
+  }
+  
+//app.use(errorHandler)
 app.listen(port, () =>{
     console.log("server is listening on port:" + port)  
 });
