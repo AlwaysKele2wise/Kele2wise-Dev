@@ -1,6 +1,5 @@
-const userModel = require("../models/users")
+const userModel = require("../models/userModels")
 const bcrypt = require("bcrypt")
-
 
 
 
@@ -81,6 +80,8 @@ res.status(200).json({
    data:userExist
     })
 };
+
+
 
 
 module.exports = {
