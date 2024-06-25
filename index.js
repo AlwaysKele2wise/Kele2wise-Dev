@@ -1,14 +1,38 @@
+const express = require ("express")
+require("dotenv").config();
 
 
-// function dev() {
-// console.log("dev")
-//}
+const app = express();
 
-// dev()
+const port = process.env.PORT;
 
-const dev = (par1,par2) => {
-console.log("dev")
+app.get("/set/", (req, res, next) => {
+   
+    const Userdetails = {
+        name: "Mercy Genevieve",
+        age: 35,
+        occupation:"Fashion Designer",
+        address: "Iba Estate",
+    }  
 
-}
+    res.send(Userdetails) 
 
-dev(2, 3)
+})
+
+
+
+app.post("/register", (req, res, next) => {
+    //const { firstName, email, password } = req.body
+    
+    const body = req.body
+
+    console.log(body)
+
+    res.send ({ responseBody: req.body,
+        msg: "User succesfully registered"
+    })
+})
+
+app.listen(port, () => {
+    console.log("server is listening on port:" + port)
+})
