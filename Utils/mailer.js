@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const otp = require('./otpGenerator')
+
 //const asyncErrorHandler = require('../Middleware/errorHandler');
 
 exports.welcomeUser = async (email, firstName) => {
@@ -25,4 +26,6 @@ exports.welcomeUser = async (email, firstName) => {
 
 };
 
-// module.exports = mailer;
+//module.exports = mailer;
+
+
