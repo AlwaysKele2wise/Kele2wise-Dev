@@ -1,7 +1,7 @@
 const express = require("express")
-//const userModel = require("../models/userModels")
+
 const {registerUser, getUser, getAUser} = require("../controller/user")
-//const bcrypt = require("bcrypt")
+
 const welcomeUser = require ("../Utils/mailer")
 
 
